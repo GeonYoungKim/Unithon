@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.edge.weather.unithon.Collection"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/action_bar"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="29.3dp"
+            android:layout_marginRight="314.7dp"
+            android:layout_marginTop="16.3dp"
+            android:src="@drawable/icon_arrow2"
+            />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="91dp"
+            android:layout_height="27dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/invalid_name" />
+
+
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="312dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:src="@drawable/habito"
+        />
+
+    <ImageView
+        android:layout_width="312dp"
+        android:layout_height="208dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:src="@drawable/abito"/>
+
+</LinearLayout>

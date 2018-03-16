@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.edge.weather.unithon.MainActivity">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fcfcfc"
+    android:id="@+id/main_rela">
+    <ImageView
+        android:layout_width="88dp"
+        android:layout_height="36dp"
+        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="24dp"
+        android:textColor="#00809e"
+        android:src="@drawable/main_title"
+        android:lineSpacingExtra="5sp"
+        tools:text="Habit UP"
+        android:id="@+id/main_title"
+        />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/main_title"
+    android:id="@+id/progressBar"
+    android:layout_marginTop="8dp">
+    <ProgressBar
+        android:id="@+id/main_back_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:progressDrawable="@drawable/progress_bubble"
+        android:layout_width="0dp"
+        android:layout_height="8dp"
+        android:layout_marginLeft="24dp"
+        android:background="#f3f2f2"
+        android:layout_marginRight="24dp"
+
+         />
+    <ProgressBar
+        android:id="@+id/main_front_progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginLeft="24dp"
+        android:background="#5db4d6"
+        android:layout_marginRight="24dp"
+
+        />
+</RelativeLayout>
+    <ImageView
+        android:layout_width="54dp"
+        android:layout_height="14dp"
+        android:textSize="12sp"
+        android:textColor="#676767"
+        android:lineSpacingExtra="2sp"
+       android:src="@drawable/main_lv_1"
+        android:id="@+id/main_lv"
+        android:layout_marginLeft="24dp"
+        android:layout_below="@id/progressBar"
+        android:layout_marginTop="6dp"
+        />
+    <ImageView
+        android:layout_width="15dp"
+        android:id="@+id/main_heart"
+        android:layout_height="14dp"
+        android:layout_toRightOf="@id/main_lv"
+        android:layout_marginLeft="205dp"
+        android:layout_below="@id/progressBar"
+        android:layout_marginTop="7dp"
+        android:src="@drawable/main_heart"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="10sp"
+        android:textColor="#676767"
+        android:lineSpacingExtra="6sp"
+        tools:text="80/100"
+        android:layout_toRightOf="@id/main_heart"
+        android:layout_below="@id/progressBar"
+        android:layout_marginTop="7dp"
+        />
+
+    <ImageView
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginLeft="24dp"
+        android:layout_below="@id/main_lv"
+        android:layout_marginTop="17dp"
+        android:id="@+id/btn_start"
+        android:src="@drawable/main_voice"
+        />
+    <ImageView
+        android:layout_width="137dp"
+        android:layout_height="64.6dp"
+        android:layout_toRightOf="@id/btn_start"
+        android:layout_marginLeft="125dp"
+        android:layout_below="@id/main_heart"
+        android:id="@+id/userimagethink"
+        android:layout_marginTop="16dp"
+        />
+<FrameLayout
+    android:layout_width="192dp"
+    android:layout_height="192dp"
+    android:layout_marginLeft="84dp"
+    android:layout_marginRight="84dp"
+    android:layout_below="@id/progressBar"
+    android:layout_marginTop="77dp"
+    >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/userimagedefault"
+        android:layout_toRightOf="@id/btn_start"
+        />
+    <ImageView
+        android:id="@+id/userimagehappy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/btn_start" />
+    <ImageView
+        android:id="@+id/userimageunhappy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/btn_start" />
+    <ImageView
+        android:id="@+id/level_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/btn_start" />
+    <ImageView
+        android:id="@+id/level_3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/btn_start" />
+</FrameLayout>
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="37dp"
+        android:id="@+id/schedule_list_btn"
+        android:layout_marginLeft="26dp"
+        android:layout_below="@id/main_lv"
+        android:layout_marginTop="253.4dp"
+        android:src="@drawable/main_record"
+        />
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="37dp"
+        android:id="@+id/collection_btn"
+        android:layout_toRightOf="@id/schedule_list_btn"
+        android:layout_marginLeft="32.5dp"
+        android:layout_below="@id/main_lv"
+        android:layout_marginTop="253.4dp"
+        android:src="@drawable/main_collection"
+        />
+    <ImageView
+        android:layout_width="32dp"
+        android:layout_height="37dp"
+        android:id="@+id/toDo_create_btn"
+        android:layout_toRightOf="@id/collection_btn"
+        android:layout_marginLeft="193.3dp"
+        android:layout_below="@id/main_lv"
+        android:layout_marginTop="253.4dp"
+        android:src="@drawable/main_habit_create"
+        />
+</RelativeLayout>
+
+    <com.baoyz.swipemenulistview.SwipeMenuListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/list_view"
+        android:layout_below="@id/main_rela"
+        android:layout_marginTop="7dp"
+        >
+    </com.baoyz.swipemenulistview.SwipeMenuListView>
+
+</RelativeLayout>

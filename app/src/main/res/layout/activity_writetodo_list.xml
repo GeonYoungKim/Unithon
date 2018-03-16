@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.edge.weather.unithon.WritetodoList"
+    >
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/action_bar"
+        >
+
+        <ImageView
+            android:id="@+id/Write_finish"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginLeft="29.3dp"
+            android:layout_marginRight="314.7dp"
+            android:layout_marginTop="16.3dp"
+            android:src="@drawable/icon_arrow2"
+
+            />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="91dp"
+            android:layout_height="27dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/writetodo" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="227dp"
+        android:layout_height="27dp"
+        android:textSize="18sp"
+        android:textColor="#544f4f"
+        android:text="실천할 습관을 작성해주세요."
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="85dp"
+        android:layout_marginTop="52dp"
+
+        />
+    <EditText
+        android:id="@+id/addtodotext"
+        android:layout_width="184dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="48dp"
+        android:layout_marginRight="128dp"
+        android:hint="내용입력"
+        />
+
+    <TextView
+        android:layout_width="197dp"
+        android:layout_height="27dp"
+        android:textSize="18sp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="63dp"
+        android:textColor="#544f4f"
+        android:text="언제까지 할 예정인가요?"
+        />
+    <DatePicker
+        android:layout_width="match_parent"
+        android:layout_height="136dp"
+        android:id="@+id/addtododate"
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_horizontal"
+        android:datePickerMode="spinner"
+        android:calendarViewShown="false"/>
+
+    <ImageView
+        android:layout_width="64dp"
+        android:id="@+id/addtodobutton"
+        android:layout_height="64dp"
+        android:layout_marginLeft="248dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/todo_create"/>
+
+
+</LinearLayout>
