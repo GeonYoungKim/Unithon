@@ -15,16 +15,16 @@ import java.util.ArrayList;
  */
 
 public class CollectionViewAdapter extends BaseAdapter {
-    private ArrayList<CollectionDTO> myitems= new ArrayList<>();
+    private ArrayList<CollectionDTO> myItems= new ArrayList<>();
 
     @Override
     public int getCount() {
-        return myitems.size();
+        return myItems.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return myitems.get(position);
+        return myItems.get(position);
     }
 
     @Override
@@ -52,6 +52,6 @@ public class CollectionViewAdapter extends BaseAdapter {
     public void addItem(Drawable Icon){
         CollectionDTO item = new CollectionDTO();
         item.setIcon(Icon);
-        myitems.add(item);
+        myItems.add(item);
     }
 }

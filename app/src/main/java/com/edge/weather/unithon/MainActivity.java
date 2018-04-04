@@ -71,9 +71,9 @@ import static com.edge.weather.unithon.R.raw.song_1;
 
 public class MainActivity extends AppCompatActivity {
     static public toDOViewAdapter toDOViewAdapter;
-    private int thinkingindex,res;
+    private int thinkingIndex,res;
     private SwipeMenuListView listView;
-    private ImageView schedule_list_btn, toDo_create_btn, collection_btn;;
+    private ImageView scheduleListBtn, toDoCreateBtn, collectionBtn;;
     private ProgressBar progressBar;
     private static final int MY_PERMISSION_AUDIO=1111;
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -88,11 +88,11 @@ public class MainActivity extends AppCompatActivity {
     private static String OAUTH_CLIENT_ID = "7mMbd8FS1_lD3k99NYKu";
     private static String OAUTH_CLIENT_SECRET = "bFINTBJLUk";
     private static String OAUTH_CLIENT_NAME = "네이버 아이디로 로그인";
-    String access_token="";
-    private GlideDrawableImageViewTarget Userimagedefault, Userimagehappy,Userimageunhappy,level_1,level_3;
+    String accessToken="";
+    private GlideDrawableImageViewTarget userImageDefault, userImageHappy,userImageUnhappy,level_1,level_3;
     static public ImageView level_2_image,userimagehappy,userimageunhappy, userimagethink,level_1_image,level_3_image;;
     String email="";
-    Intent alarmintent;
+    Intent alarmIntent;
     PendingIntent pendingIntent;
     long triggerTime=0;
     String judge="";
@@ -134,14 +134,14 @@ public class MainActivity extends AppCompatActivity {
         handler = new RecognitionHandler(this);
         naverRecognizer = new NaverRecognizer(this, handler, CLIENT_ID);
 
-        Userimagedefault = new GlideDrawableImageViewTarget(level_2_image);
-        Userimagehappy = new GlideDrawableImageViewTarget(userimagehappy);
-        Userimageunhappy = new GlideDrawableImageViewTarget(userimageunhappy);
+        userImageDefault = new GlideDrawableImageViewTarget(level_2_image);
+        userImageHappy = new GlideDrawableImageViewTarget(userimagehappy);
+        userImageUnhappy = new GlideDrawableImageViewTarget(userimageunhappy);
         level_1=new GlideDrawableImageViewTarget(level_1_image);
         level_3=new GlideDrawableImageViewTarget(level_3_image);
-        Glide.with(this).load(R.drawable.default1).into(Userimagedefault);
-        Glide.with(this).load(R.drawable.happy).into(Userimagehappy);
-        Glide.with(this).load(R.drawable.unhappy).into(Userimageunhappy);
+        Glide.with(this).load(R.drawable.default1).into(userImageDefault);
+        Glide.with(this).load(R.drawable.happy).into(userImageHappy);
+        Glide.with(this).load(R.drawable.unhappy).into(userImageUnhappy);
         Glide.with(this).load(R.drawable.level_1_default).into(level_1);
         Glide.with(this).load(R.drawable.level_3_default).into(level_3);
         userimagehappy.setVisibility(View.GONE);
@@ -178,11 +178,11 @@ public class MainActivity extends AppCompatActivity {
         //경험치 프로그레스바
         progressBar = (ProgressBar)findViewById(R.id.main_front_progress);
         //calandar view 버튼
-        schedule_list_btn=(ImageView) findViewById(R.id.schedule_list_btn);
+        scheduleListBtn=(ImageView) findViewById(R.id.schedule_list_btn);
         //To do 추가 버튼
-        toDo_create_btn = (ImageView) findViewById(R.id.toDo_create_btn);
+        toDoCreateBtn = (ImageView) findViewById(R.id.toDo_create_btn);
         //collection 버튼
-        collection_btn = (ImageView) findViewById(R.id.collection_btn);
+        collectionBtn = (ImageView) findViewById(R.id.collection_btn);
 
 
         userimagethink.setImageResource(R.drawable.thinking);
@@ -210,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        schedule_list_btn.setOnClickListener(new View.OnClickListener() {
+        scheduleListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(MainActivity.this,ScheduleListActivity.class);
@@ -219,23 +219,23 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //할일 추가하기 버튼 클릭시 발생 이벤트 커스텀 리스트 뷰 한 아이템 추가!
-        toDo_create_btn.setOnClickListener(new View.OnClickListener() {
+        toDoCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, WritetodoList.class);
-                intent.putExtra("token",access_token);
+                intent.putExtra("token",accessToken);
                 intent.putExtra("email",email);
                 startActivity(intent);
             }
         });
-        collection_btn.setOnClickListener(new View.OnClickListener() {
+        collectionBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Collection.class);
                 startActivityForResult(intent, 1);
                 //달력 추가
                 /*CalendarCall calendarCall=new CalendarCall();
-               calendarCall.setAccess_token(access_token);
+               calendarCall.setAccess_token(accessToken);
                calendarCall.setStart_day("20171212");
                 calendarCall.setEnd_day("20171215");
                 calendarCall.setTitle("kimgunyoung");
@@ -299,8 +299,8 @@ public class MainActivity extends AppCompatActivity {
         //long intervalTime = 24 * 60 * 60 * 1000;// 24시간
         /*AlarmNotificationReceiver.content="오늘 하루 습관을 키워봐요!!";
         AlarmManager manager=(AlarmManager)getSystemService(Context.ALARM_SERVICE);
-        alarmintent=new Intent(getApplicationContext(),AlarmNotificationReceiver.class);
-        pendingIntent= PendingIntent.getBroadcast(getApplicationContext(),0,alarmintent,0);
+        alarmIntent=new Intent(getApplicationContext(),AlarmNotificationReceiver.class);
+        pendingIntent= PendingIntent.getBroadcast(getApplicationContext(),0,alarmIntent,0);
         triggerTime = setTriggerTime(18,25);
         manager.setRepeating(AlarmManager.RTC_WAKEUP, triggerTime,intervalTime,pendingIntent);*/
 
@@ -469,7 +469,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateView() {
-        access_token=mOAuthLoginInstance.getAccessToken(mContext)+"";
+        accessToken=mOAuthLoginInstance.getAccessToken(mContext)+"";
 
 
     }
@@ -481,7 +481,7 @@ public class MainActivity extends AppCompatActivity {
                 String refreshToken = mOAuthLoginInstance.getRefreshToken(mContext);
                 long expiresAt = mOAuthLoginInstance.getExpiresAt(mContext);
                 String tokenType = mOAuthLoginInstance.getTokenType(mContext);
-                access_token=accessToken;
+                accessToken=accessToken;
 
 
             } else {
@@ -501,7 +501,7 @@ public class MainActivity extends AppCompatActivity {
         }
         @Override
         protected String doInBackground(Void... params) {
-            String token = access_token;// 네이버 로그인 접근 토큰;
+            String token = accessToken;// 네이버 로그인 접근 토큰;
             String header = "Bearer " + token; // Bearer 다음에 공백 추가
             try {
                 String apiURL = "https://openapi.naver.com/v1/nid/me";
@@ -610,8 +610,8 @@ public class MainActivity extends AppCompatActivity {
                     Random rnd = new Random();
                     num = rnd.nextInt(100);
                     //Log.d("숫자는 ", String.valueOf(num));
-                    thinkingindex = num%8;  //랜덤하게 0~7까지 숫자 받아옴
-                    res = ranthink[thinkingindex];
+                    thinkingIndex = num%8;  //랜덤하게 0~7까지 숫자 받아옴
+                    res = ranthink[thinkingIndex];
 
                     Thread.sleep(1000);
                 } catch (Exception e) {

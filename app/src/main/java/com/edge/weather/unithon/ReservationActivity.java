@@ -19,7 +19,7 @@ import java.net.HttpURLConnection;
 
 public class ReservationActivity extends Activity {
 ImageView reservation;
-ImageView reservation_cancle;
+ImageView reservationCancle;
 
 String todo;
 
@@ -48,7 +48,7 @@ JsonObject jsonObject;
         getWindow().setAttributes(layoutParams);
         setContentView(R.layout.activity_reservation);
         reservation=(ImageView)findViewById(R.id.reservation);
-        reservation_cancle=(ImageView)findViewById(R.id.reservation_cancle);
+        reservationCancle=(ImageView)findViewById(R.id.reservation_cancle);
         reservation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,25 +59,25 @@ JsonObject jsonObject;
                 jsonObject.addProperty("date",date);
                 MainActivity.toDOViewAdapter.addItem(jsonObject);
                 CalendarCall calendarCall=new CalendarCall();
-                calendarCall.setAccess_token(token);
-                calendarCall.setStart_day("20180128");
-                calendarCall.setEnd_day(date.replaceAll("-","")+"");
+                calendarCall.setAccessToken(token);
+                calendarCall.setStartDay("20180128");
+                calendarCall.setEndDay(date.replaceAll("-","")+"");
                 calendarCall.setTitle(todo);
                 calendarCall.setEmail(email);
-                calendarCall.setCal_id("asdfasdfffff");
+                calendarCall.setCalulatorId("asdfasdfffff");
                 calendarCall.execute();
                 calendarCall=new CalendarCall();
-                calendarCall.setAccess_token(token);
-                calendarCall.setStart_day("20180128");
-                calendarCall.setEnd_day(date.replaceAll("-","")+"");
+                calendarCall.setAccessToken(token);
+                calendarCall.setStartDay("20180128");
+                calendarCall.setEndDay(date.replaceAll("-","")+"");
                 calendarCall.setTitle(todo);
                 calendarCall.setEmail(email);
-                calendarCall.setCal_id("asdfasdfffff");
+                calendarCall.setCalulatorId("asdfasdfffff");
                 calendarCall.execute();
                 finish();
             }
         });
-        reservation_cancle.setOnClickListener(new View.OnClickListener() {
+        reservationCancle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();

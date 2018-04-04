@@ -10,7 +10,7 @@ import java.nio.ByteOrder;
 public class AudioWriterPCM {
 
 	String path;
-	String filename;
+	String fileName;
 	FileOutputStream speechFile;
 
 	public AudioWriterPCM(String path) {
@@ -23,11 +23,11 @@ public class AudioWriterPCM {
 			directory.mkdirs();
 		}
 
-		filename = directory + "/" + sessionId + ".pcm";
+		fileName = directory + "/" + sessionId + ".pcm";
 		try {
-			speechFile = new FileOutputStream(new File(filename));
+			speechFile = new FileOutputStream(new File(fileName));
 		} catch (FileNotFoundException e) {
-			System.err.println("Can't open file : " + filename);
+			System.err.println("Can't open file : " + fileName);
 			speechFile = null;
 		}
 	}
@@ -39,7 +39,7 @@ public class AudioWriterPCM {
 		try {
 			speechFile.close();
 		} catch (IOException e) {
-			System.err.println("Can't close file : " + filename);
+			System.err.println("Can't close file : " + fileName);
 		}
 	}
 
@@ -57,7 +57,7 @@ public class AudioWriterPCM {
 		try {
 			speechFile.write(buffer.array());
 		} catch (IOException e) {
-			System.err.println("Can't write file : " + filename);
+			System.err.println("Can't write file : " + fileName);
 		}
 	}
 }

@@ -15,35 +15,43 @@ import java.net.URLEncoder;
 
 public class CalendarCall extends AsyncTask<Void, Void, String> {
     String result="";
-    private String access_token;
-    private String start_day;
-    private String end_day;
+    private String accessToken;
+    private String startDay;
+    private String endDay;
     private String title;
     private String email;
-    private String cal_id;
+    private String calulatorId;
 
-    public String getAccess_token() {
-        return access_token;
+    public String getResult() {
+        return result;
     }
 
-    public void setAccess_token(String access_token) {
-        this.access_token = access_token;
+    public void setResult(String result) {
+        this.result = result;
     }
 
-    public String getStart_day() {
-        return start_day;
+    public String getAccessToken() {
+        return accessToken;
     }
 
-    public void setStart_day(String start_day) {
-        this.start_day = start_day;
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
     }
 
-    public String getEnd_day() {
-        return end_day;
+    public String getStartDay() {
+        return startDay;
     }
 
-    public void setEnd_day(String end_day) {
-        this.end_day = end_day;
+    public void setStartDay(String startDay) {
+        this.startDay = startDay;
+    }
+
+    public String getEndDay() {
+        return endDay;
+    }
+
+    public void setEndDay(String endDay) {
+        this.endDay = endDay;
     }
 
     public String getTitle() {
@@ -62,12 +70,12 @@ public class CalendarCall extends AsyncTask<Void, Void, String> {
         this.email = email;
     }
 
-    public String getCal_id() {
-        return cal_id;
+    public String getCalulatorId() {
+        return calulatorId;
     }
 
-    public void setCal_id(String cal_id) {
-        this.cal_id = cal_id;
+    public void setCalulatorId(String calulatorId) {
+        this.calulatorId = calulatorId;
     }
 
     @Override
@@ -76,7 +84,7 @@ public class CalendarCall extends AsyncTask<Void, Void, String> {
     }
     @Override
     protected String doInBackground(Void... params) {
-        String token = access_token;
+        String token = accessToken;
         String header = "Bearer " + token; // Bearer 다음에 공백 추가
         try {
             String apiURL = "https://openapi.naver.com/calendar/createSchedule.json";
@@ -103,9 +111,9 @@ public class CalendarCall extends AsyncTask<Void, Void, String> {
                     "SEQUENCE:0\n" +
                     "CLASS:PUBLIC\n" +
                     "TRANSP:OPAQUE\n" +
-                    "UID:" + cal_id + "\n" +                          // 일정 고유 아이디
-                    "DTSTART;TZID=Asia/Seoul:"+start_day+"T170000\n" +  // 시작 일시
-                    "DTEND;TZID=Asia/Seoul:"+end_day+"T173000\n" +    // 종료 일시
+                    "UID:" + calulatorId + "\n" +                          // 일정 고유 아이디
+                    "DTSTART;TZID=Asia/Seoul:"+startDay+"T170000\n" +  // 시작 일시
+                    "DTEND;TZID=Asia/Seoul:"+endDay+"T173000\n" +    // 종료 일시
                     "SUMMARY:"+ calSum +" \n" +                    // 일정 제목
                     "ORGANIZER;CN=관리자:mailto:"+email+"\n" + // 일정 만든 사람
                     "ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;CN=admin:mailto:"+email+"\n" + // 참석자
