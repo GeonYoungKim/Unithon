@@ -17,3 +17,8 @@
 2. glide를 사용한 gif 파일 처리
 
 3. third-part library사용한 swipe-menu-listview 구현
+
+![screenshot](./image/splash.JPG)
+![screenshot](./image/main.JPG)
+![screenshot](./image/calendar.JPG)
+![screenshot](./image/book.JPG)
