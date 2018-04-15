@@ -19,13 +19,13 @@
 3. third-part library사용한 swipe-menu-listview 구현
 
 
-<img src = './image/splash.JPG' width = '200' height = '300' />
+<img src = './image/splash.JPG' width = '300' height = '450' />
 
-<img src = './image/main.JPG' width = '200' height = '300' />
+<img src = './image/main.JPG' width = '300' height = '450' />
 
-<img src = './image/calendar.JPG' width = '200' height = '300' />
+<img src = './image/calendar.JPG' width = '300' height = '450' />
 
-<img src = './image/book.JPG' width = '200' height = '300' />
+<img src = './image/book.JPG' width = '300' height = '450' />
 
 
 
