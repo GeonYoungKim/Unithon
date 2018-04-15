@@ -20,8 +20,11 @@
 
 
 <img src = './image/splash.JPG' width = '200' height = '300' />
+
 <img src = './image/main.JPG' width = '200' height = '300' />
+
 <img src = './image/calendar.JPG' width = '200' height = '300' />
+
 <img src = './image/book.JPG' width = '200' height = '300' />
 
 
