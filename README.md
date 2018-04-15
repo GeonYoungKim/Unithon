@@ -19,10 +19,10 @@
 3. third-part library사용한 swipe-menu-listview 구현
 
 
+<img src = './image/splash.JPG' width = '40' height = '60' />
+<img src = './image/main.JPG' width = '40' height = '60' />
+<img src = './image/calendar.JPG' width = '40' height = '60' />
+<img src = './image/book.JPG' width = '40' height = '60' />
 
-![screenshot](./image/splash.JPG)
-![screenshot](./image/main.JPG)
 
 
-![screenshot](./image/calendar.JPG)
-![screenshot](./image/book.JPG)
